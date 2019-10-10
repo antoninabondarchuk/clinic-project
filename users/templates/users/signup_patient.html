@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error %}
+    {{ error }}
+    {% endif %}
+     <h2>Sign up</h2>
+  <form method="post" action="{% url 'signup_patient' %}">
+    {% csrf_token %}
+  Username:
+  <br/>
+  <input type="text" name="username"/>
+  <br/>
+  First name:
+  <br/>
+  <input type="text" name="first_name">
+  <br/>
+  Last name:
+  <br/>
+  <input type="text" name="last_name">
+  <br/>
+      Certificate of insurance:
+      <br/>
+      <input type="text" name="certificate_of_insurance">
+      <br/>
+  Phone:
+  <br/>
+  <input type="tel" name="phone"/>
+  <br/>
+  Email:
+  <br/>
+  <input type="email" name="email">
+      <br/>
+  Password:
+  <br/>
+  <input type="password" name="password1"/>
+  <br/>
+  Confirm password:
+  <br/>
+  <input type="password" name="password2"/>
+  <br/>
+      <br/>
+
+
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
